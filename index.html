@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>capture smile</title>
+    <script type="module" src="./main.js"></script>
+    <style>
+      * {
+        color: white;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #222;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      video,
+      canvas {
+        border: 1px solid white;
+        width: 480px;
+        height: 250px;
+        margin-top: 10px;
+      }
+      #captureBtn {
+        cursor: pointer;
+        background-color: red;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        width: 100px;
+        height: 50px;
+        margin-top: 10px;
+      }
+      #filterBtn {
+        cursor: pointer;
+        background-color: orange;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        width: 100px;
+        height: 50px;
+        margin-top: 10px;
+      }
+      /* filters */
+      .grayscale {
+        -webkit-filter: grayscale(1);
+        -moz-filter: grayscale(1);
+        -ms-filter: grayscale(1);
+        -o-filter: grayscale(1);
+        filter: grayscale(1);
+      }
+      .sepia {
+        -webkit-filter: sepia(1);
+        -moz-filter: sepia(1);
+        -ms-filter: sepia(1);
+        -o-filter: sepia(1);
+        filter: sepia(1);
+      }
+      .invert {
+        -webkit-filter: invert(1);
+        -moz-filter: invert(1);
+        -ms-filter: invert(1);
+        -o-filter: invert(1);
+        filter: invert(1);
+      }
+      .blur {
+        filter: blur(4px) invert(1) opacity(0.5);
+        -webkit-filter: blur(4px) invert(1) opacity(0.5);
+        -moz-filter: blur(4px) invert(1) opacity(0.5);
+        -ms-filter: blur(4px) invert(1) opacity(0.5);
+        -o-filter: blur(4px) invert(1) opacity(0.5);
+      }
+      .hue {
+        filter: hue-rotate(180deg) saturate(200%);
+        -webkit-filter: hue-rotate(180deg) saturate(200%);
+        -moz-filter: hue-rotate(180deg) saturate(200%);
+        -ms-filter: hue-rotate(180deg) saturate(200%);
+        -o-filter: hue-rotate(180deg) saturate(200%);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button id="filterBtn">set filter</button>
+      <button id="captureBtn">Capture</button>
+    </nav>
+    <video muted></video>
+    <canvas></canvas>
+  </body>
+</html>
